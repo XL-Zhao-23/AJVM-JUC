@@ -1,9 +1,6 @@
-package org.example.test2;
+package org.example.test1;
 
 import org.example.MessageType;
-import org.example.test2.Actor;
-import org.example.test2.Buffer;
-import org.example.test2.Message;
 
 /**
  * ${description}
@@ -11,7 +8,7 @@ import org.example.test2.Message;
  * @author DavyDavyTom Email:a@wk2.cn
  * @since 2025/05/16 16:04
  */
-public class Test1 {
+public class Test {
     public static void main(String[] args) {
         Actor producer = new Actor();
         producer.setName("producer");
@@ -23,18 +20,16 @@ public class Test1 {
 
         for (int i = 0; i < 50; i++) {
             // 生产
-            Message<Integer> m = new Message<>();
-            m.setType(MessageType.Product.getMessageId());
-            m.setPayload(3); // 生产3个
-            producer.send(buffer, m);
+            Message message = new Message();
+            message.setType(MessageType.Product.getMessageId());
+            producer.send(buffer, message);
         }
 
         for (int i = 0; i < 100; i++) {
             // 消费
-            Message<Integer> c = new Message<>();
-            c.setType(MessageType.Consumer.getMessageId());
-            c.setPayload(2); // 消费2个
-            consumer.send(buffer, c);
+            Message message = new Message();
+            message.setType(MessageType.Consumer.getMessageId());
+            consumer.send(buffer, message);
         }
     }
 }
