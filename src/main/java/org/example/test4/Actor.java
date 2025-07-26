@@ -2,6 +2,9 @@ package org.example.test4;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
+/***
+ *  增加了错误处理
+ */
 public abstract class Actor implements Runnable {
     private final LinkedBlockingQueue<Message> mailbox = new LinkedBlockingQueue<>();
     private ActorSystem system;

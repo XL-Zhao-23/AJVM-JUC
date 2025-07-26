@@ -4,6 +4,12 @@ import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.function.Consumer;
 
+/***
+ * 新的Actor, 主要对Message 和 behavior 做了改进
+ * message增加负载字段，相当于可以传入，actor某个动作的入参
+ * 存储behavior的数据结构做了改进，Runnable 改成了 consumer， 统一性接口
+ * 数组变成了 map， 可以动态增加 behavior
+ */
 public class Actor extends Thread {
 
     public LinkedBlockingQueue<Message<?>> queue;
