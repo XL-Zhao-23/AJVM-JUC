@@ -1,7 +1,7 @@
-package org.example.actor;
+package org.example.test1;
 
 import java.util.concurrent.LinkedBlockingQueue;
-
+import org.example.test1.Message;
 /**
  * @author DavyDavyTom Email:a@wk2.cn
  * @since 2025/05/16 16:05

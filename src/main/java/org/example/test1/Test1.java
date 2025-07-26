@@ -1,9 +1,6 @@
-package org.example;
+package org.example.test1;
 
-import org.example.actor.Actor;
-import org.example.actor.Message;
-import org.example.actors.MessageType;
-import org.example.actors.Buffer;
+import org.example.MessageType;
 
 /**
  * ${description}
@@ -11,7 +8,7 @@ import org.example.actors.Buffer;
  * @author DavyDavyTom Email:a@wk2.cn
  * @since 2025/05/16 16:04
  */
-public class Main {
+public class Test1 {
     public static void main(String[] args) {
         Actor producer = new Actor();
         producer.setName("producer");

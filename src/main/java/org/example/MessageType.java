@@ -1,6 +1,4 @@
-package org.example.actors;
-
-import org.example.actor.Message;
+package org.example;
 
 /**
  * @author DavyDavyTom Email:a@wk2.cn

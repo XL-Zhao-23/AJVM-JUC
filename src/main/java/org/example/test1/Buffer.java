@@ -1,6 +1,7 @@
-package org.example.actors;
+package org.example.test1;
 
-import org.example.actor.Actor;
+import org.example.MessageType;
+import org.example.test1.Actor;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -8,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @author DavyDavyTom Email:a@wk2.cn
  * @since 2025/05/16 16:20
  */
-public class Buffer extends Actor{
+public class Buffer extends Actor {
 
     private int num;
     public Buffer() {
