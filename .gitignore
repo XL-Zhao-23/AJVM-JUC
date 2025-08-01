@@ -36,5 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+
 /src/main/java/org/example/actor/study/
-/src/main/java/org/example/actor/study/
+
