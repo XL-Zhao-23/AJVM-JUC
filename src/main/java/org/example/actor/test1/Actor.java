@@ -1,6 +1,7 @@
 package org.example.actor.test1;
 
 
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 /**
  * @author DavyDavyTom Email:a@wk2.cn
@@ -9,13 +10,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class Actor extends Thread{
 
     // 消息队列
-    public LinkedBlockingQueue<Message> queue; // 存储消息，消息中包含要执行的动作信息，比如序号
+    public ConcurrentLinkedQueue<Message> queue; // 存储消息，消息中包含要执行的动作信息，比如序号
     // 数组
     public Runnable[] behavior; // 存储可执行的动作
     public Actor(){
 
     }
-    public Actor(LinkedBlockingQueue<Message> queue, Runnable[] behavior){
+    public Actor(ConcurrentLinkedQueue<Message> queue, Runnable[] behavior){
         this.behavior = behavior;
         this.queue = queue;
     }
@@ -25,6 +26,10 @@ public class Actor extends Thread{
         message.setSender(this);
         message.setReceiver(actor);
         actor.queue.add(message);
+    }
+    // 用来测试
+    public void send(Message message){
+        this.queue.add(message);
     }
 
     // 处理消息

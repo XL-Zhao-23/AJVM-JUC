@@ -2,6 +2,7 @@ package org.example.actor.test1;
 
 import org.example.actor.MessageType;
 
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -15,7 +16,7 @@ public class Buffer extends Actor {
         this.setName("buffer");
         this.num = 1;
         this.behavior = new Runnable[2];
-        this.queue = new LinkedBlockingQueue<>();
+        this.queue = new ConcurrentLinkedQueue<>();
         behavior[MessageType.Product.getMessageId()] = new Runnable() {
             @Override
             public void run() {
